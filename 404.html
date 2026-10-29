@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Playdate</title>
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Playdate" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <meta name="description" content="Playdate helps parents and teachers coordinate playdates, birthday parties, and school events with the families in a class, without group texts or swapping phone numbers." />
+    <style id="playdate-home">
+      html, body { background: #1a2320; color: #f6f1e8; }
+      .pd-home { height: 100%; overflow: auto; font-family: "Segoe UI", sans-serif; line-height: 1.5; }
+      .pd-home * { box-sizing: border-box; }
+      .pd-wrap { width: min(1080px, 100%); margin: 0 auto; padding: 0 20px; }
+      .pd-nav { position: sticky; top: 0; z-index: 2; background: #1a2320; border-bottom: 1px solid #3a4742; }
+      .pd-nav .pd-wrap, .pd-foot .pd-wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+      .pd-brand { display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-size: 22px; color: #f6f1e8; text-decoration: none; }
+      .pd-mark { width: 32px; height: 32px; border-radius: 10px; background: #3ebea6; display: inline-flex; align-items: center; justify-content: center; gap: 3px; }
+      .pd-mark i { width: 8px; height: 8px; border-radius: 50%; background: #10211c; display: block; }
+      .pd-mark i + i { opacity: 0.6; }
+      .pd-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px; border-radius: 14px; background: #3ebea6; color: #10211c; font-weight: 650; text-decoration: none; }
+      .pd-hero { display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 36px 0 28px; }
+      .pd-kicker { color: #8eedd6; font-size: 13px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; margin: 0; }
+      h1, h2, h3 { font-family: Georgia, serif; font-weight: 500; letter-spacing: -0.02em; margin: 0; }
+      h1 { font-size: 40px; line-height: 1.05; margin-top: 12px; }
+      h2 { font-size: 32px; line-height: 1.12; }
+      .pd-sub { font-size: 18px; color: #c4b8aa; max-width: 36rem; }
+      .pd-muted { color: #c4b8aa; }
+      .pd-copy { width: 100%; }
+      .pd-phone { width: min(260px, 78vw); aspect-ratio: 780 / 1688; padding: 8px; border-radius: 36px; background: #0e1412; border: 1px solid #3a4742; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+      .pd-phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 28px; display: block; }
+      .pd-band { background: #141c1a; padding: 48px 0; }
+      .pd-feature, .pd-steps, .pd-safety { display: flex; flex-direction: column; gap: 22px; }
+      .pd-feature { align-items: center; margin-top: 40px; }
+      .pd-feature h3 { font-size: 28px; margin-top: 8px; }
+      .pd-steps, .pd-safety { margin-top: 24px; }
+      .pd-card { background: #2a3834; border-radius: 22px; padding: 22px; }
+      .pd-stepno { font-family: Georgia, serif; color: #8eedd6; font-size: 28px; margin: 0; }
+      .pd-section { padding: 48px 0; }
+      .pd-faq details { border-bottom: 1px solid #3a4742; padding: 16px 0; }
+      .pd-faq summary { font-weight: 650; cursor: pointer; }
+      .pd-faq p { margin: 8px 0 0; }
+      .pd-close { background: #1e3d36; text-align: center; padding: 48px 20px; }
+      .pd-close .pd-btn { margin-top: 18px; }
+      .pd-foot { border-top: 1px solid #3a4742; }
+      .pd-foot a { color: #8eedd6; }
+      .pd-links { display: flex; gap: 18px; }
+      @media (min-width: 960px) {
+        h1 { font-size: 64px; }
+        h2 { font-size: 42px; }
+        .pd-hero { flex-direction: row; align-items: center; padding: 72px 0 40px; }
+        .pd-feature { flex-direction: row; gap: 48px; text-align: left; }
+        .pd-feature.flip { flex-direction: row-reverse; }
+        .pd-steps, .pd-safety { flex-direction: row; }
+        .pd-card { flex: 1; }
+        .pd-shots { display: flex; justify-content: center; gap: 28px; margin-top: 36px; }
+      }
+    </style>
+  <meta name="theme-color" content="#1A2320">
+<meta name="description" content="Parents and teachers coordinate playdates, birthday parties, and school events with the families in a class, without group texts or swapping phone numbers.">
+<link rel="icon" href="/favicon.ico"/></head>
+
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root">
+      <div class="pd-home">
+        <header class="pd-nav">
+          <div class="pd-wrap">
+            <a class="pd-brand" href="/"><span class="pd-mark" aria-hidden="true"><i></i><i></i></span> Playdate</a>
+            <a class="pd-btn" href="/sign-in">Log in / Sign up</a>
+          </div>
+        </header>
+        <main>
+          <section class="pd-wrap pd-hero">
+            <div class="pd-copy">
+              <p class="pd-kicker">For elementary school classes</p>
+              <h1>Find the families in your child's class.</h1>
+              <p class="pd-sub">Plan playdates without group texts or swapping phone numbers.</p>
+              <p class="pd-muted">Playdate is for parents and teachers coordinating with the families in a class: playdates, birthday parties, school events, and more. Children do not sign in. You join with a class code, see only those families, and post the plan without a group chat.</p>
+              <p><a class="pd-btn" href="/sign-in">Log in / Sign up</a></p>
+            </div>
+            <div class="pd-phone"><img src="/landing/board.png" alt="The class board: upcoming playdates at a library and a park" /></div>
+          </section>
+          <section class="pd-section" id="who-uses">
+            <div class="pd-wrap">
+              <h2>Who uses Playdate</h2>
+              <p>Parents and teachers use Playdate to coordinate with the families in a class.</p>
+              <p class="pd-muted">A post is a time, a place, and who can make it, shared only with that class. That is how you line up playdates, birthday parties, school events, and more, such as a class party or families who can help on a field trip. There is no separate tool for each one.</p>
+              <div class="pd-safety">
+                <article class="pd-card"><h3>Playdates</h3><p class="pd-muted">A park or library time the families in the class can join.</p></article>
+                <article class="pd-card"><h3>Birthday parties</h3><p class="pd-muted">Invite the class, or just a few families, and see who replies.</p></article>
+                <article class="pd-card"><h3>School events</h3><p class="pd-muted">A class party, or a note asking who can volunteer for a field trip.</p></article>
+              </div>
+            </div>
+          </section>
+          <section class="pd-band">
+            <div class="pd-wrap">
+              <h2>Less chaos. Same classmates.</h2>
+              <article class="pd-feature">
+                <div>
+                  <p class="pd-kicker">Your class only</p>
+                  <h3>See the families in your child’s class.</h3>
+                  <p class="pd-muted">Enter the code from your teacher or room parent. You see those families and nobody else. There is no search and no public profile.</p>
+                </div>
+                <div class="pd-phone"><img src="/landing/classmates.png" alt="Classmates in a 3rd grade class, with optional messaging links" /></div>
+              </article>
+              <article class="pd-feature flip">
+                <div>
+                  <p class="pd-kicker">The plan</p>
+                  <h3>Post a playdate without the group text.</h3>
+                  <p class="pd-muted">Pick a park or library, a day, and a time. Post it to the class, or keep it to a few families. Home addresses are nudged away.</p>
+                </div>
+                <div class="pd-phone"><img src="/landing/create.png" alt="Creating a playdate at a public park" /></div>
+              </article>
+              <article class="pd-feature">
+                <div>
+                  <p class="pd-kicker">Low pressure</p>
+                  <h3>Invite a few kids, quietly.</h3>
+                  <p class="pd-muted">Private invites are visible only to the families you picked. People who have not replied just show as invited. No read receipts and no guilt.</p>
+                </div>
+                <div class="pd-phone"><img src="/landing/invite.png" alt="A private playdate invite" /></div>
+              </article>
+              <article class="pd-feature flip">
+                <div>
+                  <p class="pd-kicker">No phone numbers</p>
+                  <h3>Message on the apps you already use.</h3>
+                  <p class="pd-muted">Playdate has no group chat. Share a WhatsApp, Telegram, or Signal link only if you want. Other parents never see your phone number or your email.</p>
+                </div>
+                <div class="pd-phone"><img src="/landing/handoff.png" alt="Opening Telegram to message a parent. Playdate has no chat." /></div>
+              </article>
+            </div>
+          </section>
+          <section class="pd-section">
+            <div class="pd-wrap">
+              <h2>How it works</h2>
+              <div class="pd-steps">
+                <article class="pd-card"><p class="pd-stepno">1</p><h3>Log in / Sign up</h3><p class="pd-muted">Use Google, or a one-time 6-digit code we email you. There is no password.</p></article>
+                <article class="pd-card"><p class="pd-stepno">2</p><h3>Join your child’s class</h3><p class="pd-muted">Enter the class code. Add your name and your child’s first name. A photo is optional.</p></article>
+                <article class="pd-card"><p class="pd-stepno">3</p><h3>Post the plan</h3><p class="pd-muted">Post a time and a place to the class, or invite a few families. A playdate, a party, or a school event uses the same post. Reply “We’re in” in one tap.</p></article>
+              </div>
+            </div>
+          </section>
+          <section class="pd-band">
+            <div class="pd-wrap">
+              <h2>Private to the class</h2>
+              <p class="pd-muted">Playdate is a small tool for one class, not a social network.</p>
+              <div class="pd-safety">
+                <article class="pd-card"><h3>No phone number swapping</h3><p class="pd-muted">You do not hand out your number. Message on WhatsApp, Telegram, or Signal only if you choose to share a link.</p></article>
+                <article class="pd-card"><h3>Only families in your class</h3><p class="pd-muted">The class code is the door. There is no directory of schools and no way to browse strangers.</p></article>
+                <article class="pd-card"><h3>Your data is not sold</h3><p class="pd-muted">Playdate does not sell personal information. Playdates are deleted about a day after the event.</p></article>
+              </div>
+            </div>
+          </section>
+          <section class="pd-section">
+            <div class="pd-wrap pd-faq">
+              <h2>Questions</h2>
+              <details open><summary>Who is Playdate for?</summary><p class="pd-muted">Parents and teachers coordinating with the families in a class. They plan playdates, birthday parties, school events, and more, such as a class party or field trip volunteers. Children do not use Playdate.</p></details>
+              <details open><summary>Do I have to share my phone number?</summary><p class="pd-muted">No. Other parents never see your phone number or your email. Messaging links are optional.</p></details>
+              <details open><summary>What do other parents see?</summary><p class="pd-muted">Your display name, how you know the child if you add it, your child’s first name, and an avatar or a photo you choose. They do not see your email.</p></details>
+              <details open><summary>How do I sign in?</summary><p class="pd-muted">With Google, or with a 6-digit code sent to your email. If you already used an email code and later choose Google with that same address, it is the same account.</p></details>
+              <details open><summary>How do I delete my account?</summary><p class="pd-muted">In Settings, choose Delete my account. You can also email tysonbiegler3@gmail.com and ask us to delete it.</p></details>
+            </div>
+          </section>
+          <section class="pd-close">
+            <h2>Your class already knows who they want to play with.</h2>
+            <p class="pd-muted">Log in or sign up when you have the class code. You can read this page without an account.</p>
+            <p><a class="pd-btn" href="/sign-in">Log in / Sign up</a></p>
+          </section>
+        </main>
+        <footer class="pd-foot">
+          <div class="pd-wrap">
+            <strong>Playdate</strong>
+            <nav class="pd-links" aria-label="Legal">
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms</a>
+            </nav>
+          </div>
+        </footer>
+      </div>
+    </div>
+  <script src="/_expo/static/js/web/entry-07beb1ae7a1f028d9b98a6d1fddd0027.js" defer></script>
+</body>
+</html>
